@@ -88,7 +88,15 @@ const Services = () => {
             <TabsContent key={service.id} value={service.id} className="mt-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 group perspective-1000">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-700 hover:scale-105 hover:rotate-1" style={{ transformStyle: 'preserve-3d' }}>
+                  {/* Organic blob shape for image */}
+                  <div 
+                    className="relative overflow-hidden shadow-2xl transform transition-all duration-700 hover:scale-105" 
+                    style={{ 
+                      transformStyle: 'preserve-3d',
+                      borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
+                      animation: 'morph 8s ease-in-out infinite'
+                    }}
+                  >
                     <img
                       src={service.image}
                       alt={service.label}

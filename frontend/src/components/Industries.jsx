@@ -11,32 +11,38 @@ const Industries = () => {
     {
       title: 'Automotive',
       description: 'Helping OEMs and mobility providers optimize fleets with data-driven insights and connected vehicle innovation.',
-      image: 'https://images.pexels.com/photos/8482870/pexels-photo-8482870.jpeg'
+      image: 'https://images.pexels.com/photos/8482870/pexels-photo-8482870.jpeg',
+      shape: '40% 60% 60% 40% / 60% 30% 70% 40%'
     },
     {
       title: 'Technology',
       description: 'Empowering tech companies with market intelligence and innovation strategies for sustained growth.',
-      image: 'https://images.unsplash.com/photo-1760346546767-95b89356a6bb'
+      image: 'https://images.unsplash.com/photo-1760346546767-95b89356a6bb',
+      shape: '30% 70% 70% 30% / 60% 40% 60% 40%'
     },
     {
       title: 'Banking & Insurance',
       description: 'Delivering financial services insights and risk management solutions for competitive advantage.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg'
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
+      shape: '60% 40% 30% 70% / 40% 60% 40% 60%'
     },
     {
       title: 'Life Sciences & Healthcare',
       description: 'Supporting healthcare organizations with research insights and patient-centered innovation.',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef',
+      shape: '50% 50% 50% 50% / 60% 40% 60% 40%'
     },
     {
       title: 'FMCG',
       description: 'Providing consumer insights and market trends to drive product innovation and market success.',
-      image: 'https://images.unsplash.com/photo-1709715357520-5e1047a2b691'
+      image: 'https://images.unsplash.com/photo-1709715357520-5e1047a2b691',
+      shape: '40% 60% 40% 60% / 50% 50% 50% 50%'
     },
     {
       title: 'Ecommerce',
       description: 'Enabling online retailers with analytics and optimization strategies for enhanced customer experiences.',
-      image: 'https://images.unsplash.com/photo-1616587656977-ac36a5a430bc'
+      image: 'https://images.unsplash.com/photo-1616587656977-ac36a5a430bc',
+      shape: '70% 30% 50% 50% / 30% 70% 30% 70%'
     }
   ];
 
@@ -81,14 +87,16 @@ const Industries = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-700 transform perspective-1000 ${
+              className={`group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 transform perspective-1000 ${
                 isVisible 
                   ? 'opacity-100 translate-y-0 rotate-0' 
                   : 'opacity-0 translate-y-20 rotate-3'
               }`}
               style={{ 
                 transitionDelay: `${index * 150 + 200}ms`,
-                transformStyle: 'preserve-3d'
+                transformStyle: 'preserve-3d',
+                borderRadius: industry.shape,
+                animation: 'morph 12s ease-in-out infinite'
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -104,9 +112,6 @@ const Industries = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent group-hover:via-gray-900/40 transition-all duration-500"></div>
-                
-                {/* 3D floating overlay */}
-                <div className="absolute top-4 right-4 w-16 h-16 border-2 border-white/30 rounded-xl backdrop-blur-sm transform transition-all duration-500 group-hover:rotate-45 group-hover:scale-110"></div>
               </div>
 
               {/* Content with slide-up effect */}

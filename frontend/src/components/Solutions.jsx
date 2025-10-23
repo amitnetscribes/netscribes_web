@@ -38,20 +38,24 @@ const Solutions = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image with 3D effect */}
+          {/* Image with organic blob shape */}
           <div className={`relative group perspective-1000 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
           }`}>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-700" style={{ transformStyle: 'preserve-3d' }}>
+            <div 
+              className="relative overflow-hidden shadow-2xl transform transition-all duration-700" 
+              style={{ 
+                transformStyle: 'preserve-3d',
+                borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+                animation: 'morph 10s ease-in-out infinite'
+              }}
+            >
               <img
                 src="https://images.pexels.com/photos/1181319/pexels-photo-1181319.jpeg"
                 alt="Technology solutions"
                 className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
-              
-              {/* Floating overlay element */}
-              <div className="absolute top-8 right-8 w-32 h-32 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl transform group-hover:rotate-12 transition-transform duration-500"></div>
             </div>
 
             {/* 3D shadow effect */}
@@ -73,12 +77,14 @@ const Solutions = () => {
               {solutions.map((solution, index) => (
                 <div
                   key={index}
-                  className={`p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-200 hover:border-gray-400 hover:shadow-2xl transition-all duration-500 group cursor-pointer transform perspective-1000 ${
+                  className={`p-6 bg-gradient-to-br from-white to-gray-50 hover:border-gray-400 hover:shadow-2xl transition-all duration-500 group cursor-pointer transform perspective-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ 
                     transitionDelay: `${index * 100 + 400}ms`,
-                    transformStyle: 'preserve-3d'
+                    transformStyle: 'preserve-3d',
+                    borderRadius: '25% 75% 75% 25% / 75% 25% 75% 25%',
+                    border: '1px solid #e5e7eb'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-8px) rotateX(5deg) scale(1.02)';

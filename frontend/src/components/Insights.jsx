@@ -12,21 +12,24 @@ const Insights = () => {
       description: 'Real-world transformations and measurable impact stories',
       stat: 'Increased operational efficiency by 35%',
       image: 'https://images.unsplash.com/photo-1758691736433-4078b93abd72',
-      cta: 'Explore Case Studies'
+      cta: 'Explore Case Studies',
+      shape: '50% 50% 30% 70% / 60% 40% 60% 40%'
     },
     {
       title: 'Blogs',
       description: 'Cutting-edge insights and thought leadership content',
       stat: 'Generated 500% increase in qualified leads',
       image: 'https://images.unsplash.com/photo-1758519289074-9de36003622b',
-      cta: 'Explore Blogs'
+      cta: 'Explore Blogs',
+      shape: '70% 30% 50% 50% / 50% 50% 30% 70%'
     },
     {
       title: 'Whitepapers',
       description: 'Comprehensive research and strategic frameworks',
       stat: 'Reduced compliance costs by 40%',
       image: 'https://images.unsplash.com/photo-1758691463193-9d2b21fdb3ba',
-      cta: 'Explore Whitepapers'
+      cta: 'Explore Whitepapers',
+      shape: '40% 60% 70% 30% / 40% 60% 50% 50%'
     }
   ];
 
@@ -66,14 +69,16 @@ const Insights = () => {
           {insights.map((insight, index) => (
             <div
               key={index}
-              className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 transform perspective-1000 ${
+              className={`group bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 transform perspective-1000 ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-20'
               }`}
               style={{ 
                 transitionDelay: `${index * 200 + 200}ms`,
-                transformStyle: 'preserve-3d'
+                transformStyle: 'preserve-3d',
+                borderRadius: insight.shape,
+                animation: 'morph 10s ease-in-out infinite'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-12px) rotateX(5deg) scale(1.02)';
@@ -90,9 +95,6 @@ const Insights = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></div>
-                
-                {/* Floating decorative element */}
-                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-white/40 rounded-lg backdrop-blur-sm transform transition-all duration-500 group-hover:rotate-90"></div>
               </div>
 
               {/* Content */}

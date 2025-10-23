@@ -80,4 +80,9 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </nav>\n    </div>\n  );\n};\n\nexport default Navbar;
+      </nav>
+    </div>
+  );
+};
+
+export default Navbar;

@@ -83,7 +83,7 @@ const Solutions = () => {
                   style={{ 
                     transitionDelay: `${index * 100 + 400}ms`,
                     transformStyle: 'preserve-3d',
-                    borderRadius: '25% 75% 75% 25% / 75% 25% 75% 25%',
+                    borderRadius: ['35% 65% 70% 30% / 60% 40% 60% 40%', '60% 40% 50% 50% / 50% 50% 60% 40%', '45% 55% 65% 35% / 55% 45% 55% 45%', '55% 45% 45% 55% / 65% 35% 65% 35%'][index],
                     border: '1px solid #e5e7eb'
                   }}
                   onMouseEnter={(e) => {

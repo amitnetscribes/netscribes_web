@@ -33,4 +33,51 @@ const Navbar = () => {
 
       {/* Main Navigation Bar with glass effect */}
       <nav className={`bg-white/80 backdrop-blur-xl border-b border-gray-200/50 transition-all duration-500 ${
-        scrolled ? 'shadow-lg' : 'shadow-none'\n      }`}>\n        <div className=\"container mx-auto px-6\">\n          <div className=\"flex items-center justify-between h-16\">\n            {/* Logo with hover effect */}\n            <div className=\"flex items-center space-x-2 group cursor-pointer\">\n              <div className=\"w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300\">\n                <span className=\"text-white font-bold text-lg\">N</span>\n              </div>\n              <span className=\"text-xl font-bold text-gray-900 transform group-hover:translate-x-1 transition-transform duration-300\">netscribes</span>\n            </div>\n\n            {/* Center Navigation with underline animation */}\n            <div className=\"hidden md:flex items-center space-x-8\">\n              <a href=\"#services\" className=\"relative text-gray-700 hover:text-gray-900 transition-colors font-medium group\">\n                Services\n                <span className=\"absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300\"></span>\n              </a>\n              <a href=\"#solutions\" className=\"relative text-gray-700 hover:text-gray-900 transition-colors font-medium group\">\n                Solutions\n                <span className=\"absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300\"></span>\n              </a>\n              <a href=\"#industries\" className=\"relative text-gray-700 hover:text-gray-900 transition-colors font-medium group\">\n                Industries\n                <span className=\"absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300\"></span>\n              </a>\n              <a href=\"#insights\" className=\"relative text-gray-700 hover:text-gray-900 transition-colors font-medium group\">\n                Insights\n                <span className=\"absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300\"></span>\n              </a>\n            </div>\n\n            {/* Right Side */}\n            <div className=\"flex items-center space-x-4\">\n              <button\n                onClick={() => setIsDark(!isDark)}\n                className=\"p-2 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-110 hover:rotate-12\"\n              >\n                {isDark ? <Sun className=\"w-5 h-5 text-gray-600\" /> : <Moon className=\"w-5 h-5 text-gray-600\" />}\n              </button>\n              \n              <Button className=\"bg-gray-900 hover:bg-gray-800 text-white px-6 transform hover:scale-105 hover:shadow-xl transition-all duration-300\">\n                Talk to Us\n              </Button>\n            </div>\n          </div>\n        </div>\n      </nav>\n    </div>\n  );\n};\n\nexport default Navbar;
+        scrolled ? 'shadow-lg' : 'shadow-none'
+      }`}>
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo with hover effect */}
+            <div className="flex items-center space-x-2 group cursor-pointer">
+              <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                <span className="text-white font-bold text-lg">N</span>
+              </div>
+              <span className="text-xl font-bold text-gray-900 transform group-hover:translate-x-1 transition-transform duration-300">netscribes</span>
+            </div>
+
+            {/* Center Navigation with underline animation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#services" className="relative text-gray-700 hover:text-gray-900 transition-colors font-medium group">
+                Services
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#solutions" className="relative text-gray-700 hover:text-gray-900 transition-colors font-medium group">
+                Solutions
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#industries" className="relative text-gray-700 hover:text-gray-900 transition-colors font-medium group">
+                Industries
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#insights" className="relative text-gray-700 hover:text-gray-900 transition-colors font-medium group">
+                Insights
+                <span className="absolute bottom-0 left-0 w-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+              </a>
+            </div>
+
+            {/* Right Side */}
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setIsDark(!isDark)}
+                className="p-2 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
+              >
+                {isDark ? <Sun className="w-5 h-5 text-gray-600" /> : <Moon className="w-5 h-5 text-gray-600" />}
+              </button>
+              
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white px-6 transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                Talk to Us
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>\n    </div>\n  );\n};\n\nexport default Navbar;

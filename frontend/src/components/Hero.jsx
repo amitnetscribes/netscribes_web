@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 pt-24">
       {/* Geometric Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-gray-300/30 to-gray-400/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
